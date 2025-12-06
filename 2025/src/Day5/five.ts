@@ -73,7 +73,7 @@ const PartTwo = (rangeData: string[]) => {
         console.log(needAnotherIteration);
     }
 
-    // remove duplicates and left 0 && right 0
+    // remove duplicates
     let uniqueRanges: Range[] = [];
     for(let i = 0; i < ranges.length; i++){
         const range = ranges.find(r => r.left === ranges[i].left && r.right === ranges[i].right);
@@ -86,12 +86,8 @@ const PartTwo = (rangeData: string[]) => {
         }
     }
 
-    // remove -1 -1 ranges
+    // remove below 0 ranges
     uniqueRanges = uniqueRanges.filter(r => !(r.left < 0 && r.right < 0));
-
-    
-    console.log(uniqueRanges);
-
     uniqueRanges.forEach(range => {
         freshIngredientsIds += (range.right - range.left) + 1;
     })

@@ -53,7 +53,6 @@ const PartTwo = (data: string[]) => {
         }
 
         joltAmount += +jolts;
-        console.log(jolts);
     });
 
     console.log(joltAmount);
@@ -71,5 +70,5 @@ const GetData = (): string[] => {
   return data;
 }
 
-//PartOne(GetData());
+PartOne(GetData());
 PartTwo(GetData());
